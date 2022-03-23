@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  db:
+    container_name: "VOCO-TESTING"
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Y0uRM0th3rW0uldB34sh4m3d0fY0u
+      - POSTGRES_DB=testingsample
+    ports:
+      - "7432:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
